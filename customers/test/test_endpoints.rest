@@ -1,0 +1,37 @@
+### GET Test
+GET http://localhost:4001/api/test HTTP/1.1
+
+### GET 
+GET http://localhost:4000/api/customer/612435c5e122d50012725167 HTTP/1.1
+
+
+
+### POST
+POST http://localhost:4000/api/customer/add HTTP/1.1
+content-type: application/json
+
+{
+	"name": "Martin Ramos",
+	"email": "marprg@gmail.com",
+	"phone": "113260-3520",
+	"address": "Gral Paz 178",
+	"city": "Quilmes"
+}
+
+### PUT
+PUT http://localhost:4000/api/customer/8286bbf9-94a3-4cf2-a90c-1b42ac34a3c9 HTTP/1.1
+content-type: application/json
+
+{
+	"name": "dasjkndasd",
+	"email": "ramos.martin.alejandro@gmail.com",
+	"phone": "1132603520",
+	"address": "Gral Paz 178",
+	"city" : "Quilmes"
+}
+
+
+### DELETE
+DELETE http://localhost:4000/api/customer/8286bbf9-94a3-4cf2-a90c-1b42ac34a3c9 HTTP/1.1
+content-type: application/json
+

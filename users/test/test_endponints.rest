@@ -1,0 +1,48 @@
+### POST
+POST http://localhost:4001/api/register HTTP/1.1
+content-type: application/json
+
+{
+	"nombre": "Martin Ramos",
+    "apellido": "Martin Ramos",
+	"email": "ramos.martin.alejandro@gmail.com",
+	"password": "123456"
+}
+
+### POST
+POST http://localhost:4001/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "marprgs@gmail.com",
+    "password": "123456"
+}
+
+
+### POST Password Incorrecta
+POST http://localhost:4001/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "marprgs@gmail.com",
+    "password": "12345"
+}
+
+### POST Falta de email o password
+POST http://localhost:4001/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "marprgs@gmail.com"
+}
+
+### GET
+GET http://localhost:4001/api/users/test HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjEyNDRiM2U3ZTk3M2I0Mzg1NzZjMjczIiwiZW1haWwiOiJtYXJwcmdzQGdtYWlsLmNvbSIsImlhdCI6MTYyOTgyMzQ3Nn0.lJwuMAQBZ0yGDIEx04s9cj6fTKU7ptIuNNyMHiPuB0A
+
+### GET
+GET http://localhost:4001/api/users/test HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+
+### GET
+GET http://localhost:4001/api/users/ramos.martin.alejandro@gmail.com HTTP/1.1

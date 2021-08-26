@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    env_file: 
+      - .env
+    links: 
+      - db
+    ports: 
+      - "4000:4000"
+    depends_on: 
+      - db
+    restart: always
+  db:
+    image: mongo
+    container_name: mongo_crudnode
+    ports:
+      - 27018:27017
+    volumes: 
+      - mongodb:/data/db
+  portainer:
+    image: portainer/portainer
+    command: -H unix:///var/run/docker.sock
+    restart: always
+    ports:
+      - 9000:9000
+      - 8000:8000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+volumes:
+  mongodb:
+  portainer_data:
+
+
